@@ -5,8 +5,12 @@ const connectDB = require("./config/db");
 dotenv.config();
 connectDB();
 
+require("./mqtt");
+
 const app = express();
 app.use(express.json());
+
+
 
 app.use("/api/sensor", require("./routes/sensorRoutes"));
 
